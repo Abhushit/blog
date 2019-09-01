@@ -6,7 +6,7 @@
   <div class="container">
   <div class="form-div" style="background:white; box-shadow: 0px 7px 62px -20px rgba(0,0,0,0.57); padding: 40px;">
 
-  <form class="" action="{{url('/post')}}" method="post">
+    <form class="" action="{{url('/post')}}" method="post">
     @csrf
 
     <h1 class="pb-5" style="text-align:center;">Post Form</h1>

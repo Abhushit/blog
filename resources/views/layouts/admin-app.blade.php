@@ -76,9 +76,14 @@
         <main class="py-4">
             @yield('form')
         </main>
-
+        <main class="py-4">
+            @yield('index_content')
+        </main>
         <main class="py-4">
             @yield('prefooter')
+        </main>
+        <main class="py-4">
+            @yield('update')
         </main>
     </div>
 </body>
