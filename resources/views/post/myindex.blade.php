@@ -1,4 +1,4 @@
-@extends('layouts.admin-app')
+0.@extends('layouts.admin-app')
 @section('title','Post Index Page')
 
 
@@ -18,8 +18,8 @@
   @endforeach -->
 
   <!-- <h2>Post Title</h2> -->
-  @foreach($post as $posts)
   <div class="row">
+  @foreach($post as $posts)
     <div class="col-md-4 m-0 p-0">
       <div class="box-box" style="border: 1px solid #dadada;padding:30px;margin:20px;">
         <h2>TITLE :{{ $posts->title}} </h2>
@@ -37,15 +37,14 @@
         </div>
         <div class="update-button">
           <a href="{{url("/post/$posts->id")}}">
-            <button type="button">Update</button>
+            <button type="button">EDIT</button>
           </a>
         </div>
       </div>
     </div>
-  </div>
-
 
   @endforeach
+</div>
 
   <!-- <h2>Post Content</h2>
   @foreach($post as $posts)

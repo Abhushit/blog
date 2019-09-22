@@ -37,7 +37,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = new Post();
-        $post->user_id = auth()->user()->id;
+        $post->user_id = 2;
+        // $post->user_id = auth()->user()->id;
         $post->title = request('title') ;
         $post->content = request('content') ;
         $post->author = request('author') ;
@@ -56,7 +57,8 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view("post.update-posts",compact('','post'));
+         return view("post.update-posts",compact('','post'));
+
     }
 
     /**
@@ -79,7 +81,14 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+          $post->title = request('title') ;
+          $post->content = request('content') ;
+          $post->author = request('author') ;
+          $post->category = ($request->category) ? $request->category : 'Uncategorized';
+          $post->save();
+
+           return redirect("/post");
+
     }
 
     /**
@@ -90,6 +99,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+      $post->delete();
+      return redirect("/post");
     }
 }
